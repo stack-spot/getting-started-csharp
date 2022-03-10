@@ -1,0 +1,3 @@
+type: app
+description: .NET example aplication created with getting-started-charp stack
+template: getting-started-csharp/hello-stacker-app

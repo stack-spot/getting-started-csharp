@@ -1,0 +1,5 @@
+type: app
+description: .NET example application created with getting-started-csharp stack
+template: getting-started-csharp/hello-stacker-app
+plugins:
+  - plugin: getting-started-csharp/ask-stacker-name
