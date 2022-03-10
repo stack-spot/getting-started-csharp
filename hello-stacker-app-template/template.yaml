@@ -1,0 +1,29 @@
+name: hello-stacker-app
+description: Csharp example template to create an app that prints a greeting message to the stacker
+types:
+  - app-template
+inputs:
+  - label: Project name
+    type: text
+    name: project_name
+
+  - label: Greeting message to use
+    type: text
+    name: greeting_message
+    default: Hello
+    items:
+      - Hello
+      - Whats up
+      - Hi
+      - Good morning
+lifecycle:
+  deploy:
+    supported-os:
+      - windows
+      - linux
+      - mac
+    requirements-check:
+      dotnet:
+        check-command: dotnet --version
+        info: dotnet is is not installed
+    deploy-command: dotnet run

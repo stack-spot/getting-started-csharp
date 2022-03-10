@@ -1,0 +1,21 @@
+name: ask-stacker-name
+description: Plugin to add capacity to hello stacker app to ask stacker name before say hello
+types:
+  - app
+hooks:
+  - type: edit
+    trigger: after-render
+    path: Program.cs
+    changes:
+      - search:
+          string: "void SayHello() {"
+          insert-after:
+            snippet: snippets/ask_name_snippet
+          when:
+            not-exists: Console.WriteLine("What is your name stacker?");
+      - search:
+          string: "Stacker!"
+          replace-by:
+            value: "{name}!" 
+          when:
+            not-exists: "{name}!"
